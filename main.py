@@ -146,7 +146,7 @@ def train(**kwargs):
             loss_D_real_B = criterion_GAN(pred_real_B, target_real)
 
             # fake loss ,fake from buffer
-            fake_B_new = ReplayBuffer().push_and_pop(fake_B)
+            fake_B_new = fake_B_buffer.push_and_pop(fake_B)
             pred_fake_B = D_B(fake_B_new)
             loss_D_fake_B = criterion_GAN(pred_fake_B, target_fake)
             loss_total_B = (loss_D_real_B + loss_D_fake_B) * 0.5
@@ -158,7 +158,7 @@ def train(**kwargs):
             loss_D_real_A = criterion_GAN(pred_real_A, target_real)
 
             # fakr loss ,fake from buffer
-            fake_A_new = ReplayBuffer().push_and_pop(fake_A)
+            fake_A_new = fake_A_buffer.push_and_pop(fake_A)
             pred_fake_A = D_A(fake_A_new)
             loss_D_fake_A = criterion_GAN(pred_fake_A, target_fake)
             loss_total_A = (loss_D_fake_A + loss_D_real_A) * 0.5
