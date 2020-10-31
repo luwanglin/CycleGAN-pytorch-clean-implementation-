@@ -6,4 +6,4 @@
 
 - pytorch:0.4
 
-- dataset:[hosre2zebra.zip](
+- dataset:[https://people.eecs.berkeley.edu/~taesung_park/CycleGAN/datasets/hosre2zebra.zip](https://people.eecs.berkeley.edu/~taesung_park/CycleGAN/datasets/hosre2zebra.zip)
